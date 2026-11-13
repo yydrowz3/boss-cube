@@ -3,8 +3,8 @@ import json, zipfile, shutil, re, xml.etree.ElementTree as E
 import numpy as np
 import trimesh
 
-ROOT = Path(__file__).resolve().parent
-OUT = ROOT / 'BOSS_cube_35mm'
+ROOT = Path(__file__).resolve().parent.parent
+OUT = ROOT / 'models' / 'BOSS_cube_35mm'
 NS = {'c': 'http://schemas.microsoft.com/3dmanufacturing/core/2015/02'}
 
 def write_json(path, data):
@@ -46,8 +46,8 @@ write_json(OUT/'project_validation.json', dict(overall_mm=[35,35,35.8], body_mm=
 
 stats = {}
 for side in (35,50):
-    data=json.loads((ROOT/'_qa'/f'result{side}.json').read_text())['sliced_plates'][0]
-    with zipfile.ZipFile(ROOT/'_qa'/f'comparison{side}_sliced.3mf') as z:
+    data=json.loads((ROOT/'archive'/'qa'/f'result{side}.json').read_text())['sliced_plates'][0]
+    with zipfile.ZipFile(ROOT/'archive'/'qa'/f'comparison{side}_sliced.3mf') as z:
         code=z.read('Metadata/plate_1.gcode').decode()
         header=code.splitlines()[:100]
         assert '; filament: 2,3' in header
@@ -71,8 +71,8 @@ stats['conditions']='P2S 0.4 mm; 0.20 mm Standard; 10% gyroid; existing Bambu PL
 write_json(OUT/'slice_comparison.json',stats)
 
 source=OUT/'source';source.mkdir(exist_ok=True)
-shutil.copy2(ROOT/'build_model_35mm.py',source/'build_model.py')
-shutil.copy2(ROOT/'images.jpg',source/'images.jpg')
+shutil.copy2(ROOT/'scripts'/'build_model_35mm.py',source/'build_model.py')
+shutil.copy2(ROOT/'assets'/'reference'/'images.jpg',source/'images.jpg')
 write_json(source/'verified_process_settings.json',expected | {'curr_bed_type':config['curr_bed_type'],
     'project_filament_2':'Bambu PLA Matte, cyan #53CAC6; actual roll unverified',
     'project_filament_3':'Bambu PLA Matte, white #FFFFFF; actual roll unverified'})
@@ -93,5 +93,5 @@ uv run build_model.py
 生成器输出不绑定机型。实际 P2S 工艺已保存在交付目录的 `BOSS_cube_35mm_P2S_04.3mf`；`verified_process_settings.json` 是本次核对的参数清单，可按主说明书在 Studio 中复现。AMS 槽位需连接后确认。
 ''',encoding='utf-8')
 comparison=OUT/'comparison';comparison.mkdir(exist_ok=True)
-shutil.copy2(ROOT/'_qa'/'BOSS_cube_50mm_comparison.3mf',comparison/'BOSS_cube_50mm_P2S_04_comparison.3mf')
+shutil.copy2(ROOT/'archive'/'qa'/'BOSS_cube_50mm_comparison.3mf',comparison/'BOSS_cube_50mm_P2S_04_comparison.3mf')
 print(json.dumps(stats,ensure_ascii=False,indent=2))

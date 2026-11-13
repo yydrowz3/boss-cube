@@ -4,9 +4,9 @@ Preserves the existing printer profile and filament presets; never sends a job.
 from pathlib import Path
 import json, zipfile, xml.etree.ElementTree as E
 
-ROOT=Path(__file__).resolve().parent
-SEED=ROOT/'_qa'/'original50_session.3mf'
-OUT=ROOT/'BOSS_cube_35mm'
+ROOT=Path(__file__).resolve().parent.parent
+SEED=ROOT/'archive'/'qa'/'original50_session.3mf'
+OUT=ROOT/'models'/'BOSS_cube_35mm'
 C='http://schemas.microsoft.com/3dmanufacturing/core/2015/02'
 P='http://schemas.microsoft.com/3dmanufacturing/production/2015/06'
 E.register_namespace('',C);E.register_namespace('p',P)
@@ -75,4 +75,4 @@ def build(side,dest):
 
 if __name__=='__main__':
     build(35,OUT/'BOSS_cube_35mm_P2S_04.3mf')
-    build(50,ROOT/'_qa'/'BOSS_cube_50mm_comparison.3mf')
+    build(50,ROOT/'archive'/'qa'/'BOSS_cube_50mm_comparison.3mf')

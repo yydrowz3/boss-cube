@@ -2,7 +2,9 @@
 # requires-python = ">=3.11"
 # dependencies = ["numpy", "pillow", "opencv-python-headless", "shapely", "trimesh", "mapbox-earcut", "matplotlib"]
 # ///
-"""Rebuild: uv run build_model.py. Source: images.jpg next to this script.
+"""Rebuild from repository root: uv run scripts/build_model.py.
+Source: assets/reference/images.jpg. Standalone delivery: uv run build_model.py
+with images.jpg next to the script; outputs stay in that delivery directory.
 Coordinates in mm; print bed is XY, logo faces +Z. No printer profile.
 """
 from pathlib import Path
@@ -21,15 +23,17 @@ from matplotlib.path import Path as MPath
 from matplotlib.patches import PathPatch, Rectangle
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 
-ROOT = Path(__file__).resolve().parent
-OUT = ROOT / 'BOSS_cube_50mm'
-OUT.mkdir(exist_ok=True)
+SCRIPT_DIR = Path(__file__).resolve().parent
+ROOT = SCRIPT_DIR.parent if SCRIPT_DIR.name == 'scripts' else SCRIPT_DIR
+REFERENCE = ROOT / 'assets' / 'reference' / 'images.jpg' if SCRIPT_DIR.name == 'scripts' else ROOT / 'images.jpg'
+OUT = ROOT / 'models' / 'BOSS_cube_50mm' if SCRIPT_DIR.name == 'scripts' else ROOT / 'BOSS_cube_50mm'
+OUT.mkdir(parents=True, exist_ok=True)
 SIDE, LOGO_WIDTH, RELIEF = 50.0, 40.0, 0.8
 NS = 'http://schemas.microsoft.com/3dmanufacturing/core/2015/02'
 ET.register_namespace('', NS)
 
 def extract():
-    rgb = np.array(Image.open(ROOT/'images.jpg').convert('RGB'))
+    rgb = np.array(Image.open(REFERENCE).convert('RGB'))
     bg = np.median(rgb[10:20, 20:128].reshape(-1,3),axis=0).astype(int)
     cyan = '#'+''.join(f'{v:02X}' for v in bg)
     # White ink is separated from cyan by its red channel. Use interpolation
