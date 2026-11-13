@@ -1,0 +1,30 @@
+{
+  "overall_mm": [
+    35,
+    35,
+    35.8
+  ],
+  "body_mm": [
+    35,
+    35,
+    35
+  ],
+  "lettering_width_mm": 28,
+  "relief_mm": 0.8,
+  "watertight": true,
+  "winding_consistent": true,
+  "lettering_connected_components": 8,
+  "lettering_holes": 14,
+  "contact_z_mm": 35,
+  "lettering_supported_by_body": true,
+  "configured_process_verified": true,
+  "actual_AMS_slots_verified": false,
+  "physical_print_test_performed": false,
+  "gui_checked_layers": [
+    175,
+    176,
+    179
+  ],
+  "cyan_contact_surface_continuous_in_preview": true,
+  "first_white_layer_strokes_present_in_preview": true
+}

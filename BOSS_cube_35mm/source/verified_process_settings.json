@@ -1,0 +1,17 @@
+{
+  "printer_settings_id": "Bambu Lab P2S 0.4 nozzle",
+  "print_settings_id": "0.20mm Standard @BBL P2S",
+  "layer_height": "0.2",
+  "initial_layer_print_height": "0.2",
+  "wall_loops": "2",
+  "sparse_infill_density": "10%",
+  "sparse_infill_pattern": "gyroid",
+  "top_shell_layers": "5",
+  "bottom_shell_layers": "3",
+  "enable_support": "0",
+  "ironing_type": "no ironing",
+  "enable_prime_tower": "1",
+  "curr_bed_type": "Textured PEI Plate",
+  "project_filament_2": "Bambu PLA Matte, cyan #53CAC6; actual roll unverified",
+  "project_filament_3": "Bambu PLA Matte, white #FFFFFF; actual roll unverified"
+}

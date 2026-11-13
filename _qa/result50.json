@@ -1,0 +1,80 @@
+{
+    "error_string": "Success.",
+    "export_time": 727,
+    "layer_height": 0.20000000298023224,
+    "plate_index": 0,
+    "prepare_time": 94,
+    "return_code": 0,
+    "sliced_plates": [
+        {
+            "feature_type_times": {
+                "Bottom surface": 77.80655670166016,
+                "Bridge": 105.35758972167969,
+                "Custom": 401.73040771484375,
+                "Flush": 118.25753784179688,
+                "Gap infill": 13.240883827209473,
+                "Inner wall": 235.9976348876953,
+                "Internal solid infill": 195.43714904785156,
+                "Outer wall": 329.6962585449219,
+                "Prime tower": 718.3544311523438,
+                "Sparse infill": 1123.1829833984375,
+                "Top surface": 79.03624725341797,
+                "Travel": 502.7413635253906,
+                "Undefined": 497.31536865234375
+            },
+            "filament_change_times": 1,
+            "filaments": [
+                {
+                    "filament_id": "GFA01",
+                    "id": 2,
+                    "main_used_g": 31.353530883789063,
+                    "total_used_g": 38.571807861328125
+                },
+                {
+                    "filament_id": "GFA01",
+                    "id": 3,
+                    "main_used_g": 0.7246257066726685,
+                    "total_used_g": 1.230266809463501
+                }
+            ],
+            "generate_support_material_time": 21,
+            "id": 1,
+            "infill_time": 356,
+            "layer_filament_change": 0,
+            "main_predication": 2636.824462890625,
+            "make_perimeters_time": 103,
+            "obj_cached_cnt": 0,
+            "objects": [
+                {
+                    "bbox": {
+                        "depth": 50.0,
+                        "height": 50.79999923706055,
+                        "width": 50.0,
+                        "x": 103.0,
+                        "y": 103.0,
+                        "z": 0.0
+                    },
+                    "id": 5,
+                    "name": "BOSS cube 50mm",
+                    "triangle_count": 2408
+                }
+            ],
+            "sliced_time": 1541,
+            "sliced_time_with_cache": 804,
+            "total_predication": 3895.740966796875,
+            "triangle_count": 2408,
+            "warning_message": ""
+        }
+    ],
+    "sparse_infill_density": 10.0,
+    "upward_compatible_machine": [
+        "Bambu Lab A1 0.4 nozzle",
+        "Bambu Lab H2S 0.4 nozzle",
+        "Bambu Lab H2D 0.4 nozzle",
+        "Bambu Lab H2D Pro 0.4 nozzle",
+        "Bambu Lab H2C 0.4 nozzle",
+        "Bambu Lab X2D 0.4 nozzle",
+        "Bambu Lab A2L 0.4 nozzle"
+    ],
+    "wall_loops": 2
+}

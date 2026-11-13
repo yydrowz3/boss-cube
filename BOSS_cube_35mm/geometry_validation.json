@@ -1,0 +1,28 @@
+{
+  "body_mm": [
+    35.0,
+    35.0,
+    35.0
+  ],
+  "overall_mm": [
+    35.0,
+    35.0,
+    35.8
+  ],
+  "lettering_mm": [
+    27.999999999999996,
+    24.909909909909906,
+    0.7999999999999972
+  ],
+  "lettering_parts": 8,
+  "lettering_holes": 14,
+  "cyan_hex": "#53CAC6",
+  "body_volume_mm3": 42875.0,
+  "lettering_volume_mm3": 274.51891080269354,
+  "all_meshes_watertight": true,
+  "all_meshes_consistently_oriented": true,
+  "contact_plane_mm": 35.0,
+  "lettering_fully_supported": true,
+  "faces": 2408,
+  "printer_profile_embedded": false
+}

@@ -1,0 +1,45 @@
+{
+  "35": {
+    "total_estimated_seconds": 2317.8564453125,
+    "gcode_time_header": "; model printing time: 31m 35s; total estimated time: 38m 37s",
+    "gui_total_time": "38m37s",
+    "prepare_time": "7m2s",
+    "model_time": "31m35s",
+    "total_g": 19.02448320388794,
+    "model_g": 13.317136138677597,
+    "cyan_g": 18.16468620300293,
+    "white_g": 0.8597970008850098,
+    "flush_g": 0.59,
+    "tower_g": 5.12,
+    "filament_changes": 1,
+    "used_project_filaments": [
+      2,
+      3
+    ],
+    "layer_count": 179,
+    "warning": ""
+  },
+  "50": {
+    "total_estimated_seconds": 3895.740966796875,
+    "gcode_time_header": "; model printing time: 57m 53s; total estimated time: 1h 4m 55s",
+    "gui_total_time": "1h5m",
+    "prepare_time": "7m2s",
+    "model_time": "57m53s",
+    "total_g": 39.802074670791626,
+    "model_g": 32.07815659046173,
+    "cyan_g": 38.571807861328125,
+    "white_g": 1.230266809463501,
+    "flush_g": 0.59,
+    "tower_g": 7.14,
+    "filament_changes": 1,
+    "used_project_filaments": [
+      2,
+      3
+    ],
+    "layer_count": 254,
+    "warning": ""
+  },
+  "estimated_time_reduction_percent": 40.50280896323891,
+  "estimated_material_reduction_percent": 52.20228251606975,
+  "conditions": "P2S 0.4 mm; 0.20 mm Standard; 10% gyroid; existing Bambu PLA Matte presets. Actual rolls and AMS slots not yet verified. Software estimates, not a physical print test."
+}
