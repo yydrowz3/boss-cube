@@ -8270,7 +8270,7 @@ bool GLCanvas3D::_update_assembly_view_thumbnail()
 
         glsafe(::glBindFramebuffer(GL_FRAMEBUFFER, prev_fbo));
         glsafe(::glViewport(prev_viewport[0], prev_viewport[1], prev_viewport[2], prev_viewport[3]));
-        //debug_output_thumbnail(thumbnail_assembly_view_data, "D:/thumbnail_assembly_view_data.png");
+        //debug_output_thumbnail(thumbnail_assembly_view_data, "thumbnail_assembly_view_data.png");
 
         const bool create_new_item = m_assembly_view_thumbnail.m_items.empty();
         IMToolbarItem *item = create_new_item ? new IMToolbarItem() : m_assembly_view_thumbnail.m_items.front();

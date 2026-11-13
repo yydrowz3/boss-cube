@@ -71,7 +71,7 @@ def build(side,dest):
     keep={n:data for n,data in files.items() if not (n.endswith('.png') or n in ['Metadata/plate_1.json','Metadata/slice_info.config','Metadata/filament_sequence.json'])}
     with zipfile.ZipFile(dest,'w',zipfile.ZIP_DEFLATED) as z:
         for n,data in keep.items():z.writestr(n,data)
-    print(dest)
+    print(dest.relative_to(ROOT).as_posix())
 
 if __name__=='__main__':
     build(35,OUT/'BOSS_cube_35mm_P2S_04.3mf')
