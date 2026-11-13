@@ -78,6 +78,8 @@ write_json(source/'verified_process_settings.json',expected | {'curr_bed_type':c
     'project_filament_3':'Bambu PLA Matte, white #FFFFFF; actual roll unverified'})
 (source/'README.md').write_text('''# 源码使用
 
+[English](README.en.md) | 简体中文
+
 `build_model.py` 从旁边的 `images.jpg` 提取原图字形，重新生成通用彩色 3MF、两份 STL、轮廓数据、几何验证和预览图。
 
 安装 Python 3.11 或更新版本与 uv 后，在此目录运行：
